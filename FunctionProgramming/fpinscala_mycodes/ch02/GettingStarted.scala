@@ -26,8 +26,14 @@ object MyModule{
 		msg.format(x, abs(x))
 	}
 
+	def formatResult(name: String, n: Int, f: Int => Int) = {
+		val msg = "The %s of %d is %d."
+		msg.format(name, n, f(n))
+	}
+
 	def main(args: Array[String]): Unit =
 		//println(formatAbs(-321))
-		println(formatSum(10))
+		//println(formatSum(10))
+		println(formatResult("total sum", 10, sum))
 
 }
