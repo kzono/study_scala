@@ -4,6 +4,12 @@
 
 
 object MyModule{
+	def fib(n: Int): Int = n match {
+		case 0 => 0
+		case 1 => 1
+		case n => fib(n-1) + fib(n-2)
+	}
+
 	def factorial(n: Int): Int = {
 		@annotation.tailrec
 		def go(n: Int, acc: Int): Int =
@@ -45,5 +51,6 @@ object MyModule{
 		//println(formatSum(10))
 		println(formatResult("total sum", 10, sum))
 		println(formatResult("factorial", 5, factorial))
+		println(formatResult("Fibonacci", 5, fib))
 
 }
